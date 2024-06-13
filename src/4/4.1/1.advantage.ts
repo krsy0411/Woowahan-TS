@@ -26,7 +26,7 @@ interface BaseCartItem extends BaseMenuItem {
  */
 interface EditableCartItem extends BaseCartItem {
   isSoldOut: boolean;
-  optionGroups: SelectableOptionGroup[];
+  optionGroups: string[];
 }
 
 /**

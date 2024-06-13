@@ -18,21 +18,9 @@ interface DeliveryStep {
 }
 
 function getDeliveryDistance(step: CookingStep | DeliveryStep) {
-  return step.distance;
-  // Property ‘distance’ does not exist on type ‘CookingStep | DeliveryStep’
-  // Property ‘distance’ does not exist on type ‘CookingStep’
+  // return step.distance;
 
   /**
    * Q2)) 왜 안될까요?
    */
 }
-
-type A = { a: string };
-type B = { b: number };
-type C = A | B; // A 또는 B 중 하나
-
-let value: C;
-value = { a: "hello" }; // 유효
-value = { b: 42 }; // 유효
-value = { a: "hello", b: 42 }; // 유효
-value = { a: "hello", c: 42 }; // 오류
