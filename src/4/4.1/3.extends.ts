@@ -45,7 +45,7 @@ function logBaedalInfoUnion(progress: BaedalProcessUnion) {
 /* 배달 팁 */
 interface DeliveryTip {
   tip: string;
-  }
+}
 /* 별점 */
 interface StarRating {
   rate: number;
@@ -61,3 +61,20 @@ const filter: Filter = {
   tip: "1000원 이하",
   rate: 4,
 };
+
+/////
+
+interface Version1 {
+  a: string | number;
+  b: string | number;
+}
+
+interface Version2 {
+  a: string | boolean;
+  b: string | boolean;
+}
+
+type Version1and2 = Version1 & Version2;
+function versionExample(args: Version1and2) {
+  console.log(args.a);
+}

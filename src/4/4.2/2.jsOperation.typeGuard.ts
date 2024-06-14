@@ -10,7 +10,7 @@
  * 방법1 : typeof 연산자 : 원시타입 추론용
  * 자바스크립트 동작방식으로 인한, null, 배열은 object 타입으로 나오는만큼, 약간씩 주의해야할 부분이 존재 -> 원시타입을 좁히는 용도로만 사용할 것을 권장
  * 원시타입이란? : 변경 불가능하며(pass by value) 값을 복사하여 전달하는 형태 : 원시 타입 변수를 수정하면 새로운 값이 할당되고, 기존 값은 변경되지 않습니다
- * js에서의 원시타입 종류는? : string, number, boolean, undefined, null, symbol
+ * js에서의 원시타입 종류는? : string, number, boolean, undefined, <null>, symbol
  */
 
 console.log(typeof "hello"); // string
@@ -31,8 +31,8 @@ console.log(typeof Symbol("foo")); // symbol
 // 예시
 const replaceHyphen: (date: string | Date) => string | Date = (date) => {
     if (typeof date === "string") {
-    // 이 분기에서는 date의 타입이 string으로 추론된다
-    return date.replace(/-/g, "/");
+        // 이 분기에서는 date의 타입이 string으로 추론된다
+        return date.replace(/-/g, "/");
     }
 
     return date;
